@@ -37,19 +37,39 @@ describe('seedProfile', () => {
     expect(profiles.size).toBe(1);
     const [profile] = [...profiles.values()];
     expect(profile.skills.map((skill: any) => skill.name).sort()).toEqual([
-      'Example: Node.js',
-      'Example: React',
-      'Example: TypeScript',
+      'ASP.NET Core MVC',
+      'C#',
+      'Docker',
+      'Express',
+      'GraphQL',
+      'JavaScript',
+      'MySQL',
+      'NestJS',
+      'Node.js',
+      'PostgreSQL',
+      'Prisma ORM',
+      'REST API',
+      'React',
+      'SQLite',
+      'Tailwind CSS',
+      'TypeScript',
+      'Vite',
     ]);
-    expect(profile.projects.map((project: any) => project.name)).toEqual([
-      'Example project (TODO: replace with your own)',
+    expect(
+      profile.projects
+        .map((project: any) => [project.name, project.url])
+        .sort(([left]: string[], [right]: string[]) => left.localeCompare(right)),
+    ).toEqual([
+      ['DB Manager', 'https://github.com/snowyyy66/praktika2'],
+      ['Look Restaurant', 'https://github.com/snowyyy66/deplom'],
+      ['WIWANG Marketplace', 'https://github.com/snowyyy66/praktikaz'],
     ]);
     expect(profile.experiences).toHaveLength(0);
     expect(profile.name).toBe('Вадим');
     expect(profile.description).toMatch(/выпускник колледжа/i);
-    expect(profile.description).toMatch(/коммерческого опыта пока нет/i);
+    expect(profile.description).not.toMatch(/практик|стажир/i);
     expect(profile.links).toEqual(['https://github.com/snowyyy66']);
-    expect(profile.skills.every((skill: any) => /example|todo/i.test(skill.name))).toBe(true);
-    expect(profile.projects.every((project: any) => /example|todo/i.test(project.name))).toBe(true);
+    expect(profile.skills.every((skill: any) => !/example|todo|практик|стажир/i.test(skill.name))).toBe(true);
+    expect(profile.projects.every((project: any) => !/example|todo|практик|стажир/i.test(project.name + project.description))).toBe(true);
   });
 });

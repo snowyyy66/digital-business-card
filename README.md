@@ -50,7 +50,7 @@ The smoke script uses Node's built-in `fetch` and exits with an error if the req
 
 ## Replace the demo data
 
-The seeded profile uses the first name Vadim, an entry-level description based on the developer's information, and a public GitHub link. Replace the example skills and project with details you can verify. Leave experience empty until there is genuine experience to describe; do not add a fabricated employer or credentials. The seed targets one `demo-profile` record and replaces its related collections on rerun, so restart the API after editing to apply the changes.
+The seeded profile belongs to Vadim and links to his public GitHub profile. It includes three projects and skills taken from their repository documentation. The experience list is empty because no work history was provided. Update `prisma/seed.ts` when the profile details change; the seed targets one `demo-profile` record and replaces its related collections on rerun, so restart the API to apply updates.
 
 ## Local development and checks
 

@@ -45,9 +45,10 @@ describe('seedProfile', () => {
       'Example project (TODO: replace with your own)',
     ]);
     expect(profile.experiences).toHaveLength(0);
-    expect(profile.name).toMatch(/TODO|Demo|Example/i);
-    expect(profile.description).toMatch(/recent college graduate/i);
-    expect(profile.description).toMatch(/no commercial experience/i);
+    expect(profile.name).toBe('Вадим');
+    expect(profile.description).toMatch(/выпускник колледжа/i);
+    expect(profile.description).toMatch(/коммерческого опыта пока нет/i);
+    expect(profile.links).toEqual(['https://github.com/snowyyy66']);
     expect(profile.skills.every((skill: any) => /example|todo/i.test(skill.name))).toBe(true);
     expect(profile.projects.every((project: any) => /example|todo/i.test(project.name))).toBe(true);
   });

@@ -19,19 +19,19 @@ export async function seedProfile(prisma: PrismaClient): Promise<void> {
     where: { slug: 'demo-profile' },
     create: {
       slug: 'demo-profile',
-      name: 'Demo profile (TODO: replace with your name)',
+      name: 'Вадим',
       description:
-        'Recent college graduate and entry-level fullstack developer. No commercial experience yet.',
-      links: [],
+        'Выпускник колледжа и начинающий fullstack-разработчик. Коммерческого опыта пока нет — развиваюсь на учебных и собственных проектах.',
+      links: ['https://github.com/snowyyy66'],
       skills: { create: demoSkills },
       experiences: { create: [] },
       projects: { create: demoProjects },
     },
     update: {
-      name: 'Demo profile (TODO: replace with your name)',
+      name: 'Вадим',
       description:
-        'Recent college graduate and entry-level fullstack developer. No commercial experience yet.',
-      links: [],
+        'Выпускник колледжа и начинающий fullstack-разработчик. Коммерческого опыта пока нет — развиваюсь на учебных и собственных проектах.',
+      links: ['https://github.com/snowyyy66'],
       skills: { deleteMany: {}, create: demoSkills },
       experiences: { deleteMany: {}, create: [] },
       projects: { deleteMany: {}, create: demoProjects },

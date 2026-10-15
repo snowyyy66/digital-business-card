@@ -1,3 +1,5 @@
+CREATE SCHEMA IF NOT EXISTS "public";
+
 CREATE TABLE "Profile" (
     "id" TEXT NOT NULL,
     "slug" TEXT NOT NULL,
@@ -23,7 +25,7 @@ CREATE TABLE "Experience" (
     "company" TEXT NOT NULL,
     "position" TEXT NOT NULL,
     "period" TEXT NOT NULL,
-    "achievements" TEXT[] NOT NULL DEFAULT ARRAY[]::TEXT[],
+    "achievements" TEXT[] NOT NULL,
     "profileId" TEXT NOT NULL,
     CONSTRAINT "Experience_pkey" PRIMARY KEY ("id")
 );

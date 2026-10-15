@@ -1,0 +1,47 @@
+{
+  "name": "digital-business-card",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "nest build",
+    "start": "nest start",
+    "start:dev": "nest start --watch",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "prisma:generate": "prisma generate",
+    "prisma:migrate": "prisma migrate deploy",
+    "prisma:seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@apollo/server": "^5.0.0",
+    "@nestjs/apollo": "^13.2.0",
+    "@nestjs/common": "^11.1.6",
+    "@nestjs/core": "^11.1.6",
+    "@nestjs/graphql": "^13.2.0",
+    "@nestjs/platform-express": "^11.1.6",
+    "@prisma/client": "^6.19.0",
+    "graphql": "^16.11.0",
+    "reflect-metadata": "^0.2.2",
+    "rxjs": "^7.8.2"
+  },
+  "devDependencies": {
+    "@nestjs/cli": "^11.0.10",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.7.2",
+    "jest": "^30.2.0",
+    "prisma": "^6.19.0",
+    "ts-jest": "^29.4.5",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "jest": {
+    "rootDir": ".",
+    "testRegex": ".spec.ts$",
+    "moduleFileExtensions": ["js", "json", "ts"],
+    "transform": { "^.+\\.(t|j)s$": ["ts-jest", { "tsconfig": "tsconfig.json" }] }
+  }
+}

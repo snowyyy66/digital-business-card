@@ -4,7 +4,7 @@
   "private": true,
   "packageManager": "pnpm@11.25.0",
   "scripts": {
-    "build": "prisma generate && nest build",
+    "build": "node scripts/vercel-build.cjs",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:prod": "node dist/src/main.js",
